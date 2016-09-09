@@ -1,0 +1,18 @@
+﻿Build started 09/09/2016 07:24:55 a. m..
+     1>Project "C:\Users\Pablo\Desktop\primerParcialModelacion\primerParcialModelacion\primerParcialModelacion.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>c:\users\pablo\desktop\primerparcialmodelacion\primerparcialmodelacion\main.cpp(119): error C2259: 'tresLeches' : cannot instantiate abstract class
+                 due to following members:
+                 'void Pastel::empacado(void)' : is abstract
+                 c:\users\pablo\desktop\primerparcialmodelacion\primerparcialmodelacion\main.cpp(11) : see declaration of 'Pastel::empacado'
+     1>c:\users\pablo\desktop\primerparcialmodelacion\primerparcialmodelacion\main.cpp(121): error C2259: 'sacher' : cannot instantiate abstract class
+                 due to following members:
+                 'void Pastel::empacado(void)' : is abstract
+                 c:\users\pablo\desktop\primerparcialmodelacion\primerparcialmodelacion\main.cpp(11) : see declaration of 'Pastel::empacado'
+     1>Done Building Project "C:\Users\Pablo\Desktop\primerParcialModelacion\primerParcialModelacion\primerParcialModelacion.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.51
