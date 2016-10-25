@@ -3,12 +3,18 @@
 #include "Noticieros.h"
 int main()
 {
-
-	string a = "Noticia !!!!!  ";
-	PenaNieto mySubject;
-	Hilaria mySubject2;
-	DiscursoTrumpadas mySubject3;
+	string a;
+	//string a = "Noticia !!!!!  ";
+	//PenaNieto mySubject;
+	//Hilaria mySubject2;
+	//DiscursoTrumpadas mySubject3;
+	Politico penaNieto(1, 1, 1, 1, 0);
+	Politico hilaria(1, 1, 1, 1, 1);
+	Politico discursoTrumpadas(1, 1, 1, 1, 1);
 	int m=0;
+
+	cout << "Dame la noticia: " << endl;
+	getline(cin, a);
 
 	while (m != 4){
 		cout << "\t\t\tElija una opcion\n\n";
@@ -20,14 +26,18 @@ int main()
 
 		switch (m)
 		{
-		case 1: mySubject.setValue(a);
+		case 1: cout << "Peña Nieto: " << endl;
+				penaNieto.setValue(a);
 				cout << endl; 
 				break;
-		case 2:	mySubject2.setValue(a);
+		case 2:	cout << "Hilaria: " << endl;
+				hilaria.setValue(a);
 				cout << endl; 
 				break;
-		case 3: mySubject3.setValue(a);
-			cout << endl; break;
+		case 3: cout << "Discurso Trumpadas: " << endl;
+				discursoTrumpadas.setValue(a);
+				cout << endl; break;
+
 		case 4:cout << "Ya esta fuera" << endl; break;
 		default: cout << "El valor ingresado no esta en el menu" << endl;
 		}

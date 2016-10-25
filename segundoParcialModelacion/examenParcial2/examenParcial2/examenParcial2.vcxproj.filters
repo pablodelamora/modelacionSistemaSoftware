@@ -23,5 +23,8 @@
     <ClInclude Include="Noticieros.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Politico.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -15,17 +15,9 @@ public:
 	//MVSNoticias(string not) : noticia(not){}
 
 	//update function es llamada por observer cuando haya algún cambio en valores
-	void printUpdate(string val, int op)
+	void printUpdate(string val)
 	{
-		if (op == 1){
-			cout << "Se ha agregado la noticia de Pena Nieto " << val << "al noticiero MVS \n";
-		}
-		if (op == 2){
-			cout << "Se ha agregado la noticia de Hilaria " << val << "al noticiero MVS \n";
-		}
-		if (op == 3){
-			cout << "Se ha agregado la noticia de Discursos de las Trumpadas " << val << "al noticiero MVS \n";
-		}
+		cout << "Se ha agregado la noticia (  " << val << " ) al noticiero MVS \n";
 	}
 };
 
@@ -40,17 +32,9 @@ public:
 	//MVSNoticias(string not) : noticia(not){}
 
 	//update function es llamada por observer cuando haya algún cambio en valores
-	void printUpdate(string val, int op)
+	void printUpdate(string val)
 	{
-			if (op == 1){
-				cout << "Se ha agregado la noticia de Pena Nieto " << val << "al noticiero Televisa \n";
-			}
-			if (op == 2){
-				cout << "Se ha agregado la noticia de Hilaria " << val << "al noticiero Televisa \n";
-			}
-			if (op == 3){
-				cout << "Se ha agregado la noticia de Discursos de las Trumpadas " << val << "al noticiero Televisa \n";
-		}
+		cout << "Se ha agregado la noticia (  " << val << " ) al noticiero Televisa \n";
 	}
 };
 
@@ -66,17 +50,9 @@ public:
 	//MVSNoticias(string not) : noticia(not){}
 
 	//update function es llamada por observer cuando haya algún cambio en valores
-	void printUpdate(string val, int op)
+	void printUpdate(string val)
 	{
-		if (op == 1){
-			cout << "Se ha agregado la noticia de Pena Nieto " << val << "al noticiero TV Azteca \n";
-		}
-		if (op == 2){
-			cout << "Se ha agregado la noticia de Hilaria " << val << "al noticiero TV Azteca \n";
-		}
-		if (op == 3){
-			cout << "Se ha agregado la noticia de Discursos de las Trumpadas " << val << "al noticiero TV Azteca \n";
-		}
+		cout << "Se ha agregado la noticia (  " << val << " ) al noticiero TV Azteca \n";
 	}
 };
 
@@ -93,17 +69,9 @@ public:
 	//MVSNoticias(string not) : noticia(not){}
 
 	//update function es llamada por observer cuando haya algún cambio en valores
-	void printUpdate(string val, int op)
+	void printUpdate(string val)
 	{
-		if (op == 1){
-			cout << "Se ha agregado la noticia de Pena Nieto " << val << "al noticiero Radio Formula \n";
-		}
-		if (op == 2){
-			cout << "Se ha agregado la noticia de Hilaria " << val << "al noticiero Radio Formula \n";
-		}
-		if (op == 3){
-			cout << "Se ha agregado la noticia de Discursos de las Trumpadas " << val << "al noticiero Radio Formula \n";
-		}
+			cout << "Se ha agregado la noticia (  " << val << " ) al noticiero Radio Formula \n";
 	}
 };
 
@@ -118,23 +86,64 @@ public:
 	//MVSNoticias(string not) : noticia(not){}
 
 	//update function es llamada por observer cuando haya algún cambio en valores
-	void printUpdate(string val, int op)
+	void printUpdate(string val)
 	{
-		if (op == 1){
-			cout << "Se ha agregado la noticia de Pena Nieto " << val << "al noticiero CNN \n";
-		}
-		if (op == 2){
-			cout << "Se ha agregado la noticia de Hilaria " << val << "al noticiero CNN \n";
-		}
-		if (op == 3){
-			cout << "Se ha agregado la noticia de Discursos de las Trumpadas " << val << "al noticiero CNN \n";
-		}
+		cout << "Se ha agregado la noticia (  " << val << " ) al noticiero CNN \n";
 	}
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //Personas Que pueden publicar
 //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+class Politico
+{
+	string value;
+
+	MVSNoticias mvs;
+	Televisa televisa;
+	TVAzteca tvazteca;
+	RadioFormula radioformula;
+	CNNNoticias cnnnoticias;
+
+	bool activaMVS, activaTelevisa, activaTVAzteca, activaRadioformula, activaCNN;
+
+public:
+
+	Politico(bool act1, bool act2, bool act3, bool act4, bool act5){
+		activaMVS = act1;
+		activaTelevisa = act2;
+		activaTVAzteca = act3;
+		activaRadioformula = act4;
+		activaCNN = act5;
+	}
+
+	void setValue(string input){
+		value = input;
+		notify();
+	}
+	void notify()
+	{
+		if (activaMVS)
+			mvs.printUpdate(value);
+		if (activaTelevisa)
+			televisa.printUpdate(value);
+		if (activaTVAzteca)
+			tvazteca.printUpdate(value);
+		if (activaRadioformula)
+			radioformula.printUpdate(value);
+		if (activaCNN)
+			cnnnoticias.printUpdate(value);
+	}
+};
+
+
+
+
+
+
+/*
 class PenaNieto
 {
 	string value;
@@ -239,52 +248,10 @@ public:
 	}
 };
 
+*/
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
 
-/*
-class ResObserver
-{
-	int numero;
-public:
-	//constructor
-	ResObserver(int num) : numero(num){}
-
-	//update function es llamada por observer cuando haya algún cambio en valores
-	void printUpdate(int val)
-	{
-		cout << val << " - " << numero << " = " << val - numero << '\n';
-	}
-};
-
-class Subject
-{
-	int value;
-	//objetos de tipo observers son parte de Subject. para extender funcionalidad sería un arreglo dinámico de objetos observadores
-	SumObserver suma;
-	ResObserver resta;
-
-public:
-	//constructor con lista de inicialización
-	Subject() : suma(4), resta(3){}
-
-	//asignar valor guarda el valor deseado y manda llamar notify
-	void setValue(int input)
-	{
-		value = input;
-		notify();
-	}
-
-	//notify manda llamar los comandos de printUpdate de los objetos
-	void notify()
-	{
-		suma.printUpdate(value);
-		resta.printUpdate(value);
-	}
-};
-
-*/
-
-//#endif /* Clases_h */
